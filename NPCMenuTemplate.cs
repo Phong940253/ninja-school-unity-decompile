@@ -308,7 +308,14 @@ public class NPCMenuTemplate {
             vector.addElement(new Command("Quầy sách", GameCanvas.instance, 88820, new string[0]));
             vector.addElement(new Command("Thời trang", GameCanvas.instance, 88820, new string[0]));
             vector.addElement(new Command("Gia tộc", GameCanvas.instance, 88820, new string[0]));
+            break;
         case 27:
+            // Shinwa
+            vector.addElement(new Command("Gian hàng", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Bán vật phẩm", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Nhận lại vật phẩm", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Tìm kiếm vật phẩm", GameCanvas.instance, 88820, new string[0]));
+            break;
         default:
             break;
         }
