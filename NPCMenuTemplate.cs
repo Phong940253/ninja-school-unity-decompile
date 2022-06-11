@@ -254,6 +254,7 @@ public class NPCMenuTemplate {
             vector.addElement(new Command("Giao chiến", GameCanvas.instance, 88820, option115));
             break;
         case 12:
+            // Tajima
             string[] option121 = {
                 "",
                 "Cách chơi",
@@ -273,6 +274,7 @@ public class NPCMenuTemplate {
             vector.addElement(new Command("Cài đặt mời", GameCanvas.instance, 88820, new string[0]));
             break;
         case 25:
+            // Rikudou
             string[] option251 = {
                 "",
                 "Nhận",
