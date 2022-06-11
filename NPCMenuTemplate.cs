@@ -301,6 +301,14 @@ public class NPCMenuTemplate {
             };
             vector.addElement(new Command("Chiến trường", GameCanvas.instance, 88820, option253));
             vector.addElement(new Command("Thất thú ải", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 26:
+            // Goosho
+            vector.addElement(new Command("Cửa hàng", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Quầy sách", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Thời trang", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Gia tộc", GameCanvas.instance, 88820, new string[0]));
+        case 27:
         default:
             break;
         }
