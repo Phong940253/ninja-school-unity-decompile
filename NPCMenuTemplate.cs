@@ -1,38 +1,106 @@
 ﻿using System;
 
-public class NPCMenuTemplate
-{
-	public NPCMenuTemplate()
-	{
-	}
+public class NPCMenuTemplate {
+    public NPCMenuTemplate() {}
 
-	public static MyVector getVectorMenu(MyVector vector, int npcId)
-    {
-        switch (npcId)
-        {
-            case 1:
-                vector.addElement(new Command("Binh khí",  GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Gia tộc",  GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Hang động sau trường",  GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Lôi đài",  GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Nói chuyện",  GameCanvas.instance, 88820, {}));
+    public static MyVector getVectorMenu(MyVector vector, int npcId) {
+        switch (npcId) {
+        case 0:
+            // Kanata
+            vector.addElement(new Command("Binh khí", GameCanvas.instance, 88820, new string[0]));
 
-            case 3:
-                vector.addElement(new Command("Dược phẩm (Yên)", GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Dược phẩm (Xu)", GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, {}));
-                break;
-            case 4:
-                vector.addElement(new Command("thức ăn (yên)", GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("thức ăn (xu)", GameCanvas.instance, 88820, {}));
-                vector.addElement(new Command("nói chuyện", GameCanvas.instance, 88820, {}));
+            string[] option02 = {
+                "",
+                "Thành lập",
+                "Lãnh Địa gia tộc",
+                "Đổi túi quà",
+                "Hướng dẫn"
+            };
+            vector.addElement(new Command("Gia tộc", GameCanvas.instance, 88820, option02));
 
-                string[] option4 = { "đăng ký", "chinh phục", "thiên bảng", "địa bảng" };
-                vector.addElement(new Command("thiên địa bảng", GameCanvas.instance, 88820, option4));
+            string[] option03 = {
+                "",
+                "Nhận thưởng",
+                "Cấp 35",
+                "Cấp 45",
+                "Cấp 55",
+                "Cấp 65",
+                "Cấp 75",
+                "Cấp 95"
+            };
+            vector.addElement(new Command("Hang động sau trường", GameCanvas.instance, 88820, option03));
 
-                break;
-            default:
-                break;
+            string[] option04 = {
+                "",
+                "Thách đấu",
+                "Xem thi đấu",
+                "Kết quả",
+                "Ninja tài năng",
+                "Xếp hạng tài năng"
+            };
+            vector.addElement(new Command("Lôi đài", GameCanvas.instance, 88820, option04));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 1:
+            // Furoya
+            string[] option11 = {
+                "",
+                "Nón",
+                "Áo",
+                "Găng tay",
+                "Quần",
+                "Giày"
+            };
+            vector.addElement(new Command("Y phục", GameCanvas.instance, 88820, option11));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 2:
+            // Ameji
+            string[] option21 = {
+                "",
+                "Liên",
+                "Nhẫn",
+                "Ngọc bội",
+                "Phù",
+            };
+            vector.addElement(new Command("Trang sức", GameCanvas.instance, 88820, option21));
+            string[] option22 = {
+                "",
+                "Nhận",
+                "Trả",
+                "Hủy",
+                "Nhận Geningan",
+                "Nâng cấp",
+                "Nâng cấp vip",
+                "Hướng dẫn"
+            };
+            vector.addElement(new Command("Nhiệm vụ danh vọng", GameCanvas.instance, 88820, option22));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 3:
+            // Kiriko
+            vector.addElement(new Command("Dược phẩm (Yên)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Dược phẩm (Xu)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 4:
+            // Tabemono
+            vector.addElement(new Command("thức ăn (yên)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("thức ăn (xu)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("nói chuyện", GameCanvas.instance, 88820, new string[0]));
+
+            string[] option44 = {
+                "",
+                "đăng ký",
+                "chinh phục",
+                "thiên bảng",
+                "địa bảng"
+            };
+            vector.addElement(new Command("thiên địa bảng", GameCanvas.instance, 88820, option44));
+
+            break;
+        default:
+            break;
         }
 
         return vector;
