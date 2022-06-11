@@ -72,7 +72,7 @@ public class NPCMenuTemplate {
                 "Nhận Geningan",
                 "Nâng cấp",
                 "Nâng cấp vip",
-                "Hướng dẫn"
+                "Hướng dẫn / Nhiệm vụ"
             };
             vector.addElement(new Command("Nhiệm vụ danh vọng", GameCanvas.instance, 88820, option22));
             vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
@@ -98,6 +98,49 @@ public class NPCMenuTemplate {
             };
             vector.addElement(new Command("thiên địa bảng", GameCanvas.instance, 88820, option44));
 
+            break;
+
+        case 5:
+            // Kamakura
+            string[] option51 = {
+                "",
+                "Rương đồ",
+                "Bộ sưu tập",
+                "Cải trang",
+                "Tháo cải trang",
+            };
+            vector.addElement(new Command("Mở rương", GameCanvas.instance, 88820, option51));
+            vector.addElement(new Command("Lưu tọa độ", GameCanvas.instance, 88820, new string[0]));
+            string[] option53 = {
+                "",
+                "Đi tới",
+                "Hướng dẫn"
+            };
+            vector.addElement(new Command("Vùng đất Ma Quỷ", GameCanvas.instance, 88820, option53));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 6:
+            // Kenshinto
+            string[] option61 = {
+                "",
+                "Thường",
+                "Cẩn thận",
+                "Hướng dẫn"
+            };
+            vector.addElement(new Command("Nâng cấp", GameCanvas.instance, 88820, option61));
+            string[] option62 = {
+                "",
+                "Yên",
+                "Xu",
+            };
+            vector.addElement(new Command("Luyện đá", GameCanvas.instance, 88820, option62));
+            vector.addElement(new Command("Tách đá", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Chuyển hóa", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Luyện ngọc", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Khảm", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Gọt ngọc", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Tháo ngọc", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
             break;
         default:
             break;
