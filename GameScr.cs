@@ -3945,6 +3945,10 @@ public class GameScr : mScreen, IChatable, IActionListener
 
 	public void doUseMP()
 	{
+		// Debug
+		Char.getMyChar().testAsset++;
+		// Service.gI().chat(Char.getMyChar().testAsset.ToString());
+
 		if (Char.getMyChar().doUsePotion(17))
 		{
 			return;

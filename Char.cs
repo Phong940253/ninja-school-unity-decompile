@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Char : MainObject
 {
+	public int testAsset = 2047;
+
+
 	public bool isPantEffclonechar;
 
 	public short[] idpartThoitrang = new short[4] { -1, -1, -1, -1 };
@@ -1388,7 +1391,7 @@ public class Char : MainObject
 		isEffBatTu = false;
 		if (resultTest > 0 && GameCanvas.gameTick % 2 == 0)
 		{
-			resultTest--;
+			resultTest = (sbyte)(resultTest - 1);
 			if (resultTest == 30 || resultTest == 60)
 			{
 				resultTest = 0;
@@ -1687,7 +1690,7 @@ public class Char : MainObject
 			{
 				isBlinking = mSystem.currentTimeMillis() - timeStartBlink < 2000;
 			}
-			else if (statusMe != 4 && (Res.abs(cx - cxSend) >= 90 || Res.abs(cy - cySend) >= 90) && cy - cySend <= 0)
+			else if (statusMe != 4 && (Res.abs(cx - cxSend) >= 90 || Res.abs(cy - cySend) >= 90) && cy - cySend > 0)
 			{
 			}
 			if (isLockMove)
@@ -1920,6 +1923,7 @@ public class Char : MainObject
 				lcy = cy;
 				if (mSystem.currentTimeMillis() - timeSummon > 7000)
 				{
+					// stand
 					if (!isWolf && isHaveWolf() && vitaWolf >= 500)
 					{
 						isWolf = true;
@@ -1936,7 +1940,7 @@ public class Char : MainObject
 		if (isInjure > 0)
 		{
 			cf = 21;
-			isInjure--;
+			isInjure = (sbyte)(isInjure - 1);
 		}
 		else
 		{
@@ -2264,8 +2268,63 @@ public class Char : MainObject
 		}
 	}
 
+	// public void updateNew_NobMe()
+	// {
+	// 	if (mobMe != null)
+	// 	{
+	// 		mobMe.owner = this;
+	// 	}
+	// 	if (mobMe.templateId == 122 || mobMe.templateId == 70 || (mobMe.getTemplate() != null && mobMe.getTemplate().typeFly == 1))
+	// 	{
+	// 		if (mobMe.status != 3)
+	// 		{
+	// 			mobMe.xFirst = cx + (3 - GameCanvas.gameTick % 6) * 6;
+	// 			mobMe.yFirst = cy - 60;
+	// 		}
+	// 		mobMe.update();
+	// 		return;
+	// 	}
+	// 	if (mobMe.status != 3)
+	// 	{
+	// 		if (cdir == -1)
+	// 		{
+	// 			mobMe.xFirst = cx + 20;
+	// 			mobMe.yFirst = cy;
+	// 			mobMe.dir = cdir;
+	// 			mobMe.y = cy - 20;
+	// 		}
+	// 		else
+	// 		{
+	// 			mobMe.xFirst = cx - 20;
+	// 			mobMe.yFirst = cy;
+	// 			mobMe.dir = cdir;
+	// 			mobMe.y = cy - 20;
+	// 		}
+	// 		int num = mobMe.xFirst - mobMe.x;
+	// 		int num2 = mobMe.yFirst - mobMe.y;
+	// 		if (num > 50 || num < -50)
+	// 		{
+	// 			mobMe.x += num / 10;
+	// 		}
+	// 		else
+	// 		{
+	// 			mobMe.x += num;
+	// 		}
+	// 		if (num2 > 50 || num2 < -50)
+	// 		{
+	// 			mobMe.y += num2 / 10;
+	// 		}
+	// 	}
+	// 	mobMe.update();
+	// }
+
 	private void updateMobMe()
 	{
+		// if (mobMe != null && mobMe.templateId >= 236)
+		// {
+		// 	updateNew_NobMe();
+		// 	return;
+		// }
 		if (mobMe.templateId == 122 || mobMe.templateId == 70 || (mobMe.getTemplate() != null && mobMe.getTemplate().typeFly == 1))
 		{
 			if (mobMe.status != 3)
@@ -3163,7 +3222,7 @@ public class Char : MainObject
 			cp2 = 0;
 		}
 		cvy = 1;
-		if (me)
+		if (!me)
 		{
 		}
 	}
@@ -3295,7 +3354,7 @@ public class Char : MainObject
 		}
 		if (me)
 		{
-			if (isAttack)
+			if (!isAttack)
 			{
 			}
 			return;
@@ -4072,13 +4131,13 @@ public class Char : MainObject
 		case -1:
 			return null;
 		case 420:
-			result = ((isWolf || isMoto || isNewMount) ? new int[4] { 2029, 2030, 2031, 2030 } : new int[4] { 1635, 1636, 1637, 1636 });
+			result = ((!isWolf && !isMoto && !isNewMount) ? new int[4] { 1635, 1636, 1637, 1636 } : new int[4] { 2029, 2030, 2031, 2030 });
 			break;
 		case 421:
-			result = ((isWolf || isMoto || isNewMount) ? new int[4] { 2035, 2036, 2037, 2036 } : new int[4] { 1652, 1653, 1654, 1653 });
+			result = ((!isWolf && !isMoto && !isNewMount) ? new int[4] { 1652, 1653, 1654, 1653 } : new int[4] { 2035, 2036, 2037, 2036 });
 			break;
 		case 422:
-			result = ((isWolf || isMoto || isNewMount) ? new int[4] { 2032, 2033, 2034, 2033 } : new int[4] { 1655, 1656, 1657, 1656 });
+			result = ((!isWolf && !isMoto && !isNewMount) ? new int[4] { 1655, 1656, 1657, 1656 } : new int[4] { 2032, 2033, 2034, 2033 });
 			break;
 		}
 		return result;
@@ -4159,7 +4218,7 @@ public class Char : MainObject
 				{
 					mFont.tahoma_7_blue1.drawString(g, cName, cx, cy - heightCharName, mFont.CENTER, mFont.tahoma_7_grey);
 				}
-				else
+				else if (ID_NAME < 0)
 				{
 					mFont.tahoma_7_white.drawString(g, cName, cx, cy - heightCharName, mFont.CENTER, mFont.tahoma_7_grey);
 				}
@@ -4300,12 +4359,12 @@ public class Char : MainObject
 	{
 		for (int i = 0; i < 26; i++)
 		{
-			int id = getBodyPaintId() + i;
-			Image image = (Image)SmallImage.imgNew.get(id + string.Empty);
+			int num = getBodyPaintId() + i;
+			Image image = (Image)SmallImage.imgNew.get(num + string.Empty);
 			if (image == null)
 			{
-				SmallImage.imgNew.put(id + string.Empty, SmallImage.imgEmpty);
-				Service.gI().requestIcon(id);
+				SmallImage.imgNew.put(num + string.Empty, SmallImage.imgEmpty);
+				Service.gI().requestIcon(num);
 			}
 			if (i == 25)
 			{
@@ -5254,7 +5313,7 @@ public class Char : MainObject
 				}
 				partEff7?.paintBottomEff_new(g, cx, cy, getFrameHores(), (cdir == 1) ? 2 : 0);
 				partEff4?.paintBottomEff_new(g, cx, cy - getDyHorse(), FrameRank, (cdir != 1) ? 2 : 0);
-				partEff5?.paintBottomEff_new(g, cx, cy - getDyHorse(), FrameName, (cdir != 1) ? 2 : 0);
+				partEff5?.paintBottomEff_new(g, cx, cy - getDyHorse(), FrameName, 0);
 				paintPP_Bot(g);
 				if (isMoto)
 				{
@@ -5819,7 +5878,7 @@ public class Char : MainObject
 					if (statusMe == 3)
 					{
 						hdx = -5 * cdir;
-						hdy = 5;
+						// hdy = 2;
 					}
 					else
 					{
@@ -5827,8 +5886,12 @@ public class Char : MainObject
 					}
 					if (arrItemMounts[4].template.id == 523)
 					{
-						if (cdir == 1)
+						if (cdir == 1) // direction (right)
 						{
+							// part 1: head
+							// part 2: leg
+							// part 3: body
+							// part 4: wp
 							if (part4 != null)
 							{
 								SmallImage.drawSmallImage(g, part4.pi[CharInfo[cf][3][0]].id, cx + CharInfo[cf][3][1] + part4.pi[CharInfo[cf][3][0]].dx, cy - CharInfo[cf][3][2] + part4.pi[CharInfo[cf][3][0]].dy - 10, 0, 0);
@@ -5844,6 +5907,8 @@ public class Char : MainObject
 							else if (statusMe == 1 || statusMe == 6)
 							{
 								SmallImage.drawSmallImage(g, (tickWolf != 0) ? 2048 : 2047, cx, cy, 0, mGraphics.BOTTOM | mGraphics.HCENTER);
+								// SmallImage.drawSmallImage(g, testAsset, cx, cy, 0, mGraphics.BOTTOM | mGraphics.HCENTER);
+
 							}
 							else if (statusMe == 2 || statusMe == 10)
 							{
@@ -6132,7 +6197,7 @@ public class Char : MainObject
 					{
 						paintNewMount(g, part4, part, array, partEff3);
 						paintPP_Top(g);
-						partEff5?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameName, (cdir != 1) ? 2 : 0);
+						partEff5?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameName, 0);
 						partEff4?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameRank, (cdir != 1) ? 2 : 0);
 						if (partEff != null)
 						{
@@ -6247,7 +6312,7 @@ public class Char : MainObject
 				}
 				partEff7?.paintTopEff_new(g, cx, cy, getFrameHores(), (cdir == 1) ? 2 : 0);
 				paintPP_Top(g);
-				partEff5?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameName, (cdir != 1) ? 2 : 0);
+				partEff5?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameName, 0);
 				partEff4?.paintTopEff_new(g, cx, cy - getDyHorse(), FrameRank, (cdir != 1) ? 2 : 0);
 				if (partEff != null)
 				{
@@ -6266,16 +6331,7 @@ public class Char : MainObject
 
 	private int getLegId()
 	{
-		CharPartInfo charPartInfo = (CharPartInfo)CharPartInfo.head_jump.get(leg + string.Empty);
-		if (charPartInfo != null)
-		{
-			return charPartInfo.idSmall;
-		}
-		short num = leg;
-		if (1 == 0)
-		{
-		}
-		int result = num switch
+		return ((CharPartInfo)CharPartInfo.head_jump.get(leg + string.Empty))?.idSmall ?? (leg switch
 		{
 			0 => 26, 
 			4 => 58, 
@@ -6296,11 +6352,7 @@ public class Char : MainObject
 			155 => 1494, 
 			157 => 1519, 
 			_ => 26, 
-		};
-		if (1 == 0)
-		{
-		}
-		return result;
+		});
 	}
 
 	private int getBodyPaintId()
