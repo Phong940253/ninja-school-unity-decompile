@@ -21,7 +21,7 @@ public class GameMidlet
 
 	public static sbyte serverLogin;
 
-	public const string VERSION = "1.8.8";
+	public const string VERSION = "2.0.2";
 
 	public static GameMidlet instance;
 
@@ -199,7 +199,7 @@ public class GameMidlet
 	public static void getStrSv()
 	{
 		string empty = string.Empty;
-		empty = ((CLIENT_TYPE != 1) ? connectHTTP("http://localhost/server.txt") : connectHTTP("http://localhost/server.txt"));
+		empty = ((CLIENT_TYPE != 1) ? connectHTTP("http://ninja.phong940253.tk/server.txt") : connectHTTP("http://ninja.phong940253.tk/server.txt"));
 		if (empty.Equals(string.Empty))
 		{
 			empty = ((CLIENT_TYPE != 1) ? smartPhone : java);
@@ -292,7 +292,7 @@ public class GameMidlet
 		muzic = -1;
 		latitude = string.Empty;
 		longitude = string.Empty;
-		java = "Localhost(New):127.0.0.1:14444:0:0,Tone:112.213.94.205:14444:0:0,Bokken:112.213.84.18:14444:0:0,Shuriken:27.0.14.73:14444:0:0,Tessen:27.0.14.73:14444:1:0,Kunai:112.213.94.135:14444:0:0,Katana:112.213.94.161:14444:0:0,Hirosaki:13.251.169.132:14444:0:1,Haruna (NEW):54.151.133.77:14444:0:1";
-		smartPhone = "Localhost(New):127.0.0.1:14444:0:0,Tone:112.213.94.205:14444:0:0,Bokken:112.213.84.18:14444:0:0,Shuriken:27.0.14.73:14444:0:0,Tessen:27.0.14.73:14444:1:0,Kunai:112.213.94.135:14444:0:0,Katana:112.213.94.161:14444:0:0,Hirosaki:13.251.169.132:14444:0:1,Haruna (NEW):54.151.133.77:14444:0:1";
+		java = "Hỏa quốc (New):45.77.129.249:14444:0:0";
+		smartPhone = "Hỏa quốc (New):45.77.129.249:14444:0:0";
 	}
 }
