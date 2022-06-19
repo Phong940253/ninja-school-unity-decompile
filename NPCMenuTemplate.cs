@@ -273,6 +273,45 @@ public class NPCMenuTemplate {
             vector.addElement(new Command("Nhận quà top event", GameCanvas.instance, 88820, new string[0]));
             vector.addElement(new Command("Cài đặt mời", GameCanvas.instance, 88820, new string[0]));
             break;
+        case 18:
+            // Bà Rei
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 19:
+            // Kirin 
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 20:
+            // Soba
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 21:
+            // Sunoo
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
+        case 22:
+            // Guriin
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            string[] option222 = {
+                "",
+                "Tham gia"
+            };
+            vector.addElement(new Command("Ninja đệ nhất", GameCanvas.instance, 88820, option222));
+            string[] option223 = {
+                "",
+                "Kiếm",
+                "Tiêu",
+                "Kunai",
+                "Cung",
+                "Đao",
+                "Quạt"
+            };
+            vector.addElement(new Command("Bảng xếp hạng", GameCanvas.instance, 88820, option223));
+            break;
+        case 23:
+            // Matsurugi
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            break;
         case 25:
             // Rikudou
             string[] option251 = {
