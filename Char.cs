@@ -5878,7 +5878,7 @@ public class Char : MainObject
 					if (statusMe == 3)
 					{
 						hdx = -5 * cdir;
-						// hdy = 2;
+						hdy = 0;
 					}
 					else
 					{
@@ -5934,7 +5934,7 @@ public class Char : MainObject
 							}
 							else
 							{
-								SmallImage.drawSmallImage(g, getBodyPaintId(), cx + hdx + dxBody * cdir, cy - SmallImage.getHeight(getLegId()) - 9 - hdy - dy + dyBody, 0, mGraphics.BOTTOM | mGraphics.HCENTER);
+								SmallImage.drawSmallImage(g, getBodyPaintId(), cx + hdx + dxBody * cdir, cy - SmallImage.getHeight(getLegId()) - 8 - hdy - dy + dyBody, 0, mGraphics.BOTTOM | mGraphics.HCENTER);
 							}
 							paintMatna(g, cx + num14, cy - num13, 2);
 						}
@@ -6329,9 +6329,9 @@ public class Char : MainObject
 		}
 	}
 
-	private int getLegId()
+	public int getLegId()
 	{
-		return ((CharPartInfo)CharPartInfo.head_jump.get(leg + string.Empty))?.idSmall ?? (leg switch
+		return ((CharPartInfo)CharPartInfo.head_jump.get(leg))?.idSmall ?? (leg switch
 		{
 			0 => 26, 
 			4 => 58, 
