@@ -3947,7 +3947,8 @@ public class GameScr : mScreen, IChatable, IActionListener
 	{
 		// Debug
 		Char.getMyChar().testAsset++;
-		// Service.gI().chat(Char.getMyChar().testAsset.ToString());
+		// Service.gI().chat(GameScr.parts[Char.getMyChar().body].pi[Char.CharInfo[Char.getMyChar().cf][2][0]].id.ToString());
+		// Service.gI().chat(Char.getMyChar().getLegId().ToString());
 
 		if (Char.getMyChar().doUsePotion(17))
 		{
@@ -12928,7 +12929,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						}
 						if (Main.isPC)
 						{
-							if (coinUpClothes[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpClothes[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								mFont.tahoma_7_red.drawString(g, mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpClothes[itemUpGrade.upgrade])), xstart, ystart + rows * indexSize + 5, mFont.LEFT);
 							}
@@ -12949,7 +12950,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						else
 						{
 							string[] array = new string[3];
-							if (coinUpClothes[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpClothes[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								array[0] = mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpClothes[itemUpGrade.upgrade]));
 							}
@@ -12983,7 +12984,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						}
 						if (Main.isPC)
 						{
-							if (coinUpAdorns[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpAdorns[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								mFont.tahoma_7_red.drawString(g, mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpAdorns[itemUpGrade.upgrade])), xstart, ystart + rows * indexSize + 5, mFont.LEFT);
 							}
@@ -13004,7 +13005,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						else
 						{
 							string[] array2 = new string[3];
-							if (coinUpAdorns[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpAdorns[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								array2[0] = mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpAdorns[itemUpGrade.upgrade]));
 							}
@@ -13038,7 +13039,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						}
 						if (Main.isPC)
 						{
-							if (coinUpWeapons[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpWeapons[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								mFont.tahoma_7_red.drawString(g, mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpWeapons[itemUpGrade.upgrade])), xstart, ystart + rows * indexSize + 5, mFont.LEFT);
 							}
@@ -13059,7 +13060,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 						else
 						{
 							string[] array3 = new string[3];
-							if (coinUpWeapons[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+							if (coinUpWeapons[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 							{
 								array3[0] = mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpWeapons[itemUpGrade.upgrade]));
 							}
@@ -13853,7 +13854,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 					if (Main.isPC)
 					{
 						mFont.tahoma_7_yellow.drawString(g, mResources.CRYSTALOUT + " " + (num3 + 2) + " " + mResources.LOCK, xstart + 3, ystart + rows * indexSize + 9, mFont.LEFT);
-						if (coinUpCrystals[num3 + 1] > Char.getMyChar().xu + Char.getMyChar().yen)
+						if (coinUpCrystals[num3 + 1] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 						{
 							mFont.tahoma_7_red.drawString(g, mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpCrystals[num3 + 1])), xstart + 3, ystart + rows * indexSize + 21, mFont.LEFT);
 						}
@@ -13871,7 +13872,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 							null,
 							null
 						};
-						if (coinUpCrystals[num3 + 1] > Char.getMyChar().xu + Char.getMyChar().yen)
+						if (coinUpCrystals[num3 + 1] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 						{
 							array3[1] = mResources.replace(mResources.COINLOCKNEED, NinjaUtil.numberToString(string.Empty + coinUpCrystals[num3 + 1]));
 						}
@@ -14836,7 +14837,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 				Service.gI().crystalCollect(arrItemUpPeal);
 			}
 		}
-		else if (coinUpCrystals[num3 + 1] > Char.getMyChar().xu + Char.getMyChar().yen)
+		else if (coinUpCrystals[num3 + 1] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 		{
 			GameCanvas.msgdlg.setInfo(mResources.NOT_ENOUGH_COIN_UPPEARL, null, new Command(mResources.CLOSE, 1), null);
 			GameCanvas.msgdlg.show();
@@ -14981,7 +14982,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 		int num2 = 0;
 		if (itemUpGrade.isTypeClothe())
 		{
-			if (coinUpClothes[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+			if (coinUpClothes[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 			{
 				flag = true;
 			}
@@ -14989,7 +14990,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 		}
 		else if (itemUpGrade.isTypeAdorn())
 		{
-			if (coinUpAdorns[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+			if (coinUpAdorns[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 			{
 				flag = true;
 			}
@@ -14997,7 +14998,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 		}
 		else if (itemUpGrade.isTypeWeapon())
 		{
-			if (coinUpWeapons[itemUpGrade.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+			if (coinUpWeapons[itemUpGrade.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 			{
 				flag = true;
 			}
@@ -22090,7 +22091,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 				{
 					Service.gI().requestItemInfo(itemSplit.typeUI, itemSplit.indexUI);
 				}
-				if (num10 > Char.getMyChar().xu + Char.getMyChar().yen)
+				if (num10 > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 				{
 					mFont2 = mFont.tahoma_7_red;
 				}
@@ -22471,7 +22472,7 @@ public class GameScr : mScreen, IChatable, IActionListener
 		int num2 = 0;
 		if (itemSplit != null)
 		{
-			if (coinUpWeapons[itemSplit.upgrade] > Char.getMyChar().xu + Char.getMyChar().yen)
+			if (coinUpWeapons[itemSplit.upgrade] > (long) Char.getMyChar().xu + (long) Char.getMyChar().yen)
 			{
 				flag = true;
 			}
