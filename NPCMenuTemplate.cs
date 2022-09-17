@@ -85,9 +85,9 @@ public class NPCMenuTemplate {
             break;
         case 4:
             // Tabemono
-            vector.addElement(new Command("thức ăn (yên)", GameCanvas.instance, 88820, new string[0]));
-            vector.addElement(new Command("thức ăn (xu)", GameCanvas.instance, 88820, new string[0]));
-            vector.addElement(new Command("nói chuyện", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Thức ăn (yên)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Thức ăn (xu)", GameCanvas.instance, 88820, new string[0]));
+            vector.addElement(new Command("Nói chuyện", GameCanvas.instance, 88820, new string[0]));
 
             string[] option44 = {
                 "",
@@ -96,7 +96,7 @@ public class NPCMenuTemplate {
                 "thiên bảng",
                 "địa bảng"
             };
-            vector.addElement(new Command("thiên địa bảng", GameCanvas.instance, 88820, option44));
+            vector.addElement(new Command("Thiên địa bảng", GameCanvas.instance, 88820, option44));
 
             break;
 
