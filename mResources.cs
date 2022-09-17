@@ -1515,12 +1515,14 @@ public class mResources
 			YOU_WIN = "Bạn đã thắng #.";
 			YOU_LOST = "Bạn đã thua #.";
 			TEST_END = "Cuộc so tài giữa bạn và # đã kết thúc";
-			BOSS = new string[4]
+			BOSS = new string[6]
 			{
 				string.Empty,
 				"Tinh Anh",
 				"Thủ Lĩnh",
-				"Tà Thú"
+				"Tà Thú",
+				"Tà Thần",
+				"Thần Thú",
 			};
 			CUU_SAT = " bắt đầu cừu sát bạn";
 			POTENTIAL_POINT = "Điểm tiềm năng";

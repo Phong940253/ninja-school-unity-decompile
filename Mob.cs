@@ -2002,6 +2002,12 @@ public class Mob : MainObject
 					num12 += num12 / 2;
 					num11 += num11 / 2;
 				}
+				
+				if (levelBoss == 4) {
+					num12 += num12;
+					num11 += num11 * 4;
+				} // test boss level 4
+
 				num11 += 2;
 				int num13 = num11 * num10 / 100;
 				if (num13 < 2)
@@ -2044,6 +2050,10 @@ public class Mob : MainObject
 				{
 					mFont.tahoma_7_blue1.drawString(g, mResources.BOSS[levelBoss], x, num3 - h - 26, 2, mFont.tahoma_7_grey);
 				}
+				else if (levelBoss == 4)
+				{
+					mFont.tahoma_7b_purple.drawString(g, mResources.BOSS[levelBoss], x, num3 - h - 26, 2, mFont.tahoma_7_grey);
+				}
 				if (isDisable)
 				{
 					SmallImage.drawSmallImage(g, 494, x, num3 - h - 28, 0, mGraphics.BOTTOM | mGraphics.HCENTER);
@@ -2067,6 +2077,10 @@ public class Mob : MainObject
 			else if (levelBoss == 3)
 			{
 				mFont.tahoma_7_blue1.drawString(g, mResources.BOSS[levelBoss], x, num3 - h - 20, 2, mFont.tahoma_7_grey);
+			}
+			else if (levelBoss == 4)
+			{
+				mFont.tahoma_7b_purple.drawString(g, mResources.BOSS[levelBoss], x, num3 - h - 26, 2, mFont.tahoma_7_grey);
 			}
 			if (isDisable)
 			{
